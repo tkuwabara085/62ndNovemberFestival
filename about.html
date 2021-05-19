@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>例年の様子｜京都大学11月祭</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="./css/common.css">
+        <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/21edc3223b.js" crossorigin="anonymous"></script><!--FontAwesome-->
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <link rel="icon" href="/icon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://nf.la/icon/apple-touch-icon.png" sizes="180x180"> <!-- iPhoneのホーム画面に追加アイコン -->
+<meta name="msapplication-TileImage" content="https://nf.la/img/twitter-card.png" />
+<meta name="msapplication-TileColor" content="#ffffff"/>
+  <meta property="og:url" content="https://nf.la/">
+<meta property="og:title" content="第62回京都大学11月祭" />
+<meta property="og:description" content="第62回京都大学11月祭の情報を掲載。" />
+<meta property="og:image" content="https://nf.la/img/twitter-card.png" />
+<meta name="twitter:site" content="@nfoffice" />
+<meta property="og:site_name" content="第62回京都大学11月祭" />
+<meta property="og:locale" content="ja_JP" />
+<!-- 以下Twitterカード関連 -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="第62回京都大学11月祭" />
+<meta name="twitter:description" content="第62回京都大学11月祭の情報を掲載。" />
+<meta name="twitter:image" content="https://nf.la/img/twitter-card.png" />
+        <!--#include virtual="/ssi/gtag.html"--><!--Google analytics tagの読み込み（本番環境のみ）-->
+    </head>
+    <body>
+      <div id="all">
+        <header>
+          <div id=header-head>
+            <a href="/index.html"><h1 id=logo>第62回京都大学11月祭</h1></a>
+            <button class="closed groval"><i class="fas fa-bars hnav-icon"></i></button>
+            <button class="opened groval"><i class="fas fa-times hnav-icon"></i></button>
+          </div>
+            
+        </header>
+        <div id="wrap">
+            <div id="mainVisual" class="normalvisual">
+
+            </div>
+            <div id="pnkz">
+              <ul>
+                <li class=pnkz_top><a href="/index.html"><i class="fas fa-home"></i>トップ</a></li>
+                <li><a href="/about.html">例年の様子</a></li>
+              </ul>
+            </div>
+            <h1 class="pagetitle">例年の11月祭</h1>
+              <div class="card-unshown flex-container">
+                <div class="imageWithCaps"><iframe width="304" height="171" src="https://www.youtube.com/embed/wC0iaGvPhz4?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                
+                <!--<video src="./image/video.mp4" controls class="imageWithCaps"></video>-->
+                <div class="explanationWithImage">
+                  <p>京都大学11月祭は京都大学の学園祭で、その名の通り例年11月下旬に開催されます。今年度は新型コロナウイルス感染症の影響で通常通りには開催できませんが、その規模は名実ともに関西屈指であり、４日間にも渡るお祭り騒ぎの中で、
+                    模擬店、ステージ、モニュメント、路上パフォーマンス、屋内展示、カフェ、講演、演劇など、実に多様な一般企画が行われます。
+                    また11月祭本部が主催する本部企画では、本部講演や映画祭典、研究室企画、Special Live、京大ガイドツアーなどが行われ、11月祭をより一層の盛り上がりへ導きます。
+                    最終日の夕方には、おまつり広場でFinaleが行われ、毎年恒例のビンゴ大会など多彩なイベントで盛り上がった後、FIRE で華々しく幕を閉じます。このページではその例年の様子を紹介しています。</p>
+                    <p>本年度11月祭の開催形態については<a class="text_link" href="/corona/style.html">こちら</a>をご覧下さい。</p>   
+                  </div>
+              </div>
+              <div class="card-unshown">
+                <h2>企画一覧</h2>
+                <p>※以下に紹介するのは例年の企画です。本年度は新型コロナウイルス感染症の影響で例年とは大きく異なります。<a class="text_link" href="/corona/style.html">本年度の企画について</a></p>
+                <ul class="boothMenu flex-container">
+                  <booth-menu v-for="item in booth" :key="item.title" :booth-menu="item"></booth-menu>
+                </ul>
+              </div>
+                
+                <ul class="boothList">
+                  <booth-list v-for="item in booth" :key="item.title" :booth-item="item"></booth-list>
+                </ul>
+                <kkk-general></kkk-general>     
+        </div><!--wrap閉じ-->
+        <fab-confirm></fab-confirm>
+        <gnav-side></gnav-side>
+        <footer-menu></footer-menu>
+      </div><!--all閉じ-->
+      <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>');</script><!--JqueryCDNのフォールバック-->
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+      <script>window.Vue || document.write('<script src="/js/vue.min.js"><\/script>')</script><!--VueCDNのフォールバック-->
+      <script type="text/javascript" src="/script/jquery.inview.min.js"></script>
+      <script type="text/javascript" src="./slick/slick.min.js"></script>
+    <script type="text/javascript" src="./js/common.js"></script>
+         <!--ここからはパン屑用の構造化-->
+         <script type="application/ld+json">
+          {
+           "@context": "http://schema.org",
+           "@type": "BreadcrumbList",
+           "itemListElement":
+           [
+            {
+             "@type": "ListItem",
+             "position": 1,
+             "item":
+             {
+              "@id": "/",
+              "name": "TOP"
+              }
+            },
+            {
+             "@type": "ListItem",
+            "position": 2,
+            "item":
+             {
+               "@id": "/about.html",
+               "name": "11月祭とは"
+             }
+            }
+           ]
+          }
+          </script>
+    </body>
+</html>
+
+

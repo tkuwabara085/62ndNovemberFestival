@@ -1,0 +1,71 @@
+<nav id="gnav">
+    <a href="/index.html"><h1 id=nav_title>京都大学<br>11月祭</h1></a>
+      <ul id="navi">
+          <li><a href="/index.html">TOP</a></li>
+
+          <li><button class="menu_btn">11月祭について</button>
+              <ul class="menu_content" id="events">
+                  <li v-for="item in menu_kikaku" v-bind:key="item.name"><a v-bind:href="item.url">{{item.name}}</a></li>
+              </ul>
+          </li>
+          <li>
+              <button class="menu_btn">企画出展者の方へ</button>
+              <ul class="menu_content" id="forAll">
+                <li v-for="item in menu_forall" v-bind:key="item.name"><a v-bind:href="item.url">{{item.name}}</a></li>
+              </ul>
+          </li>
+          <li v-for="item in menu_normal" :key="item.name"><a :href="item.url">{{item.name}}</a></li>
+          <li>
+            <button class="menu_btn">その他</button>
+            <ul class="menu_content">
+              <li v-for="item in menu_others" v-bind:key="item.name"><a v-bind:href="item.url">{{item.name}}</a></li>
+              
+            </ul>
+          </li>
+      </ul>
+  </nav>
+ 
+  <footer>
+    <ul id="f_menu_sns">
+      <li><a href="https://twitter.com/nfoffice" target="_blank"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://www.youtube.com/channel/UCUAJDgmhgn-cYcljEmi9-oA/" target="_blank"><i class="fab fa-youtube"></i></a></li>
+    </ul>
+    <ul id="menu_footer">
+      <li>
+        <ul class="f_menu_normal">
+          <li><a href="/index.html">TOP</a></li>
+      <li v-for="item in menu_normal" :key="item.name"><a :href="item.url">{{item.name}}</a></li>
+     
+        </ul>
+      </li>
+      <li class="footer_card">
+        <h5 class="footer_heading">11月祭について</h5>
+        <ul>
+            <li v-for="item in menu_kikaku" v-bind:key="item.name"><a v-bind:href="item.url">{{item.name}}</a></li>
+        </ul>
+      </li>
+      <li class="footer_card">
+          <h5 class="footer_heading">企画出展者の皆様へ</h5>
+          <ul>
+            <li v-for="item in menu_forall" v-bind:key="item.name"><a v-bind:href="item.url">{{item.name}}</a></li>
+          </ul>
+      </li> 
+      <li class="footer_card">
+        <h5 class="footer_heading">その他</h5>
+        <ul>
+          <li v-for="item in menu_others" v-bind:key="item.name"><a v-bind:href="item.url">{{item.name}}</a></li>
+        </ul>
+      </li>
+    </ul>   
+      <small>&copy 2020京都大学11月祭事務局</small>
+  </footer>
+  </div><!--all閉じ-->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>');</script><!--JqueryCDNのフォールバック-->
+<!--  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script>window.Vue || document.write('<script src="/js/vue.min.js"><\/script>')</script><!--VueCDNのフォールバック-->
+  <script src="/script/jquery.inview.min.js"></script>
+  <script type="text/javascript" src="/slick/slick.min.js"></script>
+  

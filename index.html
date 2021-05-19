@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>京都大学11月祭</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="./css/common.css">
+        <link rel="stylesheet" type="text/css" href="./slick.1.9.0/slick.css">
+        <link rel="stylesheet" type="text/css" href="./slick.1.9.0/slick-theme.css">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/21edc3223b.js" crossorigin="anonymous"></script><!--FontAwesome-->
+        <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+        <link rel="icon" href="/icon/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="https://nf.la/icon/apple-touch-icon.png" sizes="180x180"> <!-- iPhoneのホーム画面に追加アイコン -->
+        <meta name="msapplication-TileImage" content="https://nf.la/img/twitter-card.png" />
+        <meta name="msapplication-TileColor" content="#ffffff"/>
+        <meta property="og:url" content="https://nf.la/">
+        <meta property="og:title" content="第62回京都大学11月祭" />
+        <meta property="og:description" content="第62回京都大学11月祭の情報を掲載。" />
+        <meta property="og:image" content="https://nf.la/img/twitter-card.png" />
+        <meta name="twitter:site" content="@nfoffice" />
+        <meta property="og:site_name" content="第62回京都大学11月祭" />
+        <meta property="og:locale" content="ja_JP" />
+        <!-- 以下Twitterカード関連 -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="第62回京都大学11月祭" />
+        <meta name="twitter:description" content="第62回京都大学11月祭の情報を掲載。" />
+        <meta name="twitter:image" content="https://nf.la/img/twitter-card.png" />
+        <!--#include virtual="/ssi/gtag.html"--><!--Google analytics tagの読み込み（本番環境のみ）-->
+    </head>
+    <body>
+      <div id="all">
+        <header>
+          <div id=header-head>
+            <a href="./index.html"><h1 id=logo>第62回京都大学11月祭</h1></a>
+            <button class="closed groval"><i class="fas fa-bars hnav-icon"></i></button>
+            <button class="opened groval"><i class="fas fa-times hnav-icon"></i></button>
+          </div>
+            
+        </header>
+
+        <div id="wrap">
+            <div id="mainVisual">
+                <ul id="mainImage" class="slider">
+                  <topic-list v-for="topics in topicItems" :key="topics.content" :topic-item="topics"></topic-list> 
+                </ul>
+               <div id="counter">
+                   <!--ここの部分はJS側で記述します-->
+               </div>
+            </div>
+            <!--メインビジュアルここまで-->
+            <div class="flex-container colored"><!--本部企画とパンフのところ-->
+              <div id="honbu">
+              <h2>本部企画</h2>
+              <p class="narrative">11月祭本部が提供する本部企画の一覧です。</p>
+              <main-menu></main-menu>
+              </div>
+              <div id="pamph">
+                <h2>公式パンフレット</h2>
+               
+                <p class="narrative">「オンライン11月祭ってどんな企画があるの？」そんな皆様のための強力な味方！オンライン11月祭公式電子パンフレットを公開しました！是非ご利用下さい！</p>
+                <p class="narrative">※約70MBありますので通信環境によっては正常に閲覧できない可能性があります。</p>
+                <a class="card-small" href="./pamphlet62/index.html">公式電子パンフレット</a>
+              </div>
+            </div>
+            
+            <div id="general" class="colored">
+              <h2>一般企画</h2>
+              <p class="narrative">一般京大生が出展する一般企画。オンラインではありますが、趣向を凝らした企画が盛りだくさんです！</p>
+              <p class="narrative">※本年度一般企画は、Web上に動画や画像・文章を掲載する「展示」形式、ライブ配信を行う「ライブ」形式、物販を行う「物販」形式の三形態です。</p>
+              <search-form></search-form>
+            </div>
+            <top-kkk></top-kkk>
+            <div class="flex-container">
+              <div id="articles">
+                <h2>記事</h2>
+                <top-articles></top-articles>
+              </div>
+              <div id="news">
+                <h2>お知らせ</h2>
+                <ul>
+                    <news-table v-for="news in newsItems" :key="news.title" :news-item="news"></news-table>    
+                </ul>
+                <h2>相互リンク</h2>
+                <a href="http://www.kodairafes.com/" class="text_link" target="_blank">一橋大学KODAIRA祭</a>
+              </div>
+            </div>
+        </div><!--wrap閉じ-->
+        <fab-confirm></fab-confirm> 
+        <gnav-side></gnav-side>
+        <footer-menu></footer-menu>
+      </div><!--all閉じ-->
+      <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>');</script><!--JqueryCDNのフォールバック-->
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+      <script>window.Vue || document.write('<script src="/js/vue.min.js"><\/script>')</script><!--VueCDNのフォールバック-->
+      <script type="text/javascript" src="/script/jquery.inview.min.js"></script>
+      <script type="text/javascript" src="./slick.1.9.0/slick.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+      <script>
+        Vue.component('search-form',{
+          data:function(){
+            return{
+              keyword:'',
+              type:'',
+              label:'',
+              labels:['科学','社会','文学・アート','演芸・パフォーマンス','音楽','スポーツ','生活・サブカルチャー','パズル・クイズ・ゲーム'],
+              items:[],
+              main:'main',
+              sub:'sub',
+            }
+          },
+          methods:{
+            search:function(){
+            var self=this;
+            posting=[this.keyword];
+            axios
+              .post('./events/search.php',posting,{ headers: {'X-Requested-With': 'XMLHttpRequest'} })
+              .then(function(res){
+                self.items=res.data;
+              })
+            }
+          },
+          template:'<div class="card-unshown"><h3 class="circlehead" id="topsearch">企画検索</h3><p>一般企画・本部企画問わずすべての企画を検索して頂けます。</p><p>※検索ボタンを押しても何も表示されない場合、検索条件にあった企画が存在しない可能性があります。もう一度条件をご確認下さい。</p>'+
+            '<h3>カテゴリで検索</h3>'+
+            '<label class="form-list">形態別で検索<select v-model="type"><option value="">指定なし</option><option value="exhibition">展示</option><option value="live">ライブ</option><option value="shop">物販</option></select></label>'+
+            '<label class="form-list">内容別で検索<select v-model="label"><option value="">指定なし</option><option v-for="item in labels" :value="item">{{item}}</option></select></label><br>'+
+            '<h3>キーワードで検索</h3>'+
+            '<input type="text" class="form-text" v-model="keyword">'+
+            '<div class="center"><button @click="search" class="search_btn">検索</button></div>'+
+            '<div class="flex-container">'+
+            '<search-result v-for="item in items" :key="item.url+main" :result-item="item" :search-type="type" :search-label="label" :sub-main="main"></search-result>'+//こちらはメインタグに基づく表示
+            '<search-result v-for="item in items" :key="item.url+sub" :result-item="item" :search-type="type" :search-label="label" :sub-main="sub"></search-result>'+//こちらはサブタグに基づく表示
+            '</div>'+
+            '</div>'
+        })
+       
+      </script>
+        <script type="text/javascript" src="./js/common.js"></script>
+        <!--ここからはパン屑用の構造化-->
+        <script type="application/ld+json">
+          {
+           "@context": "http://schema.org",
+           "@type": "BreadcrumbList",
+           "itemListElement":
+           [
+            {
+             "@type": "ListItem",
+             "position": 1,
+             "item":
+             {
+              "@id": "/",
+              "name": "TOP"
+              }
+            }
+           ]
+          }
+          </script>
+    </body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>京大ガイドマップ｜京都大学11月祭</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="../../css/common.css">
+        <link rel="stylesheet" type="text/css" href="../../slick/slick.css">
+  <link rel="stylesheet" type="text/css" href="../../slick/slick-theme.css">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/21edc3223b.js" crossorigin="anonymous"></script><!--FontAwesome-->
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+  <link rel="icon" href="/icon/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="https://nf.la/icon/apple-touch-icon.png" sizes="180x180"> <!-- iPhoneのホーム画面に追加アイコン -->
+<meta name="msapplication-TileImage" content="https://nf.la/img/twitter-card.png" />
+<meta name="msapplication-TileColor" content="#ffffff"/>
+  <meta property="og:url" content="https://nf.la/">
+  <meta property="og:title" content="第62回京都大学11月祭" />
+  <meta property="og:description" content="第62回京都大学11月祭の情報を掲載。" />
+  <meta property="og:image" content="https://nf.la/img/twitter-card.png" />
+  <meta name="twitter:site" content="@nfoffice" />
+  <meta property="og:site_name" content="第62回京都大学11月祭" />
+  <meta property="og:locale" content="ja_JP" />
+  <!-- 以下Twitterカード関連 -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="第62回京都大学11月祭" />
+  <meta name="twitter:description" content="第62回京都大学11月祭の情報を掲載。" />
+  <meta name="twitter:image" content="https://nf.la/img/twitter-card.png" />
+        <!--#include virtual="/ssi/gtag.html"--><!--Google analytics tagの読み込み（本番環境のみ）-->
+    <style>
+  #content{
+    margin:10px auto;
+    max-width:800px;
+    border:4px solid #ffcc25;
+    position:relative;
+    }
+  .pop{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100vw;
+    height:100vh;
+    z-index:100;
+    background-color:rgba(256,256,256,0.5);
+    }
+  .pop-card{
+    margin:70px auto auto;
+    max-width:720px;
+    border-radius:10px;
+    border:2px solid #FFCC25;
+    background-color:#fff;
+    padding:10px;
+    max-height:70vh;
+    overflow-y:auto;
+    position:relative;
+  }
+  .pop-image{
+    margin:10px auto;
+    border-radius:10px;
+    max-width:300px;
+  }
+  .pop-bg{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color:rgba(0,0,0,0.5);
+  }
+  .guide-close{
+    position:absolute;
+    top:5px;
+    right:5px;
+    color:#ff0000;
+    font-size:40px;
+    background-color:transparent;
+    border:none;
+    padding:0px;
+  }
+  .pop-text{
+    border:2px solid #ffcc25;
+    border-top:none;
+    border-radius:0 0px 5px 5px;
+  }
+
+    </style>
+      </head>
+    <body>
+      <div id="all">
+        <header>
+          <div id=header-head>
+            <a href="/index.html"><h1 id=logo>第62回京都大学11月祭</h1></a>
+            <button class="closed groval"><i class="fas fa-bars hnav-icon"></i></button>
+            <button class="opened groval"><i class="fas fa-times hnav-icon"></i></button>
+          </div>  
+        </header>
+        <div id="wrap">
+          <div id="mainVisual" class="eventVisual"><!--ここあとで変更する。class="eventVisual"-->
+            <div class="eventmain">
+              <img src="https://nf.la/image/plans/guide.jpg">
+            </div>
+            <fab-entry></fab-entry>
+          </div>
+          <div id="pnkz">
+            <ul>
+              <li class=pnkz_top><a href="/index.html"><i class="fas fa-home"></i>トップ</a></li>
+              <li><a href="/events/honbu/map.html">ガイドマップ</a></li>
+            </ul>
+          </div>
+           <h1 class="pagetitle">京大ガイドマップ</h1>
+           <p class="narrative">11月祭の人気恒例企画、京大ガイドツアー。今年度は残念ながら不開催となってしまうのですが……その代わり、京大の、そして11月祭の情報がギュッと詰まった京大ガイドマップを11月祭期間限定で公開します！あなたも京大に、そして11月祭に詳しくなろう◎</p>
+           <p class="narrative" v-if="today>nfstart">マップの青い場所をクリック（タップ）すると、紹介が表示されます。なお、一部機種ではマップが見づらい場合がございます。あらかじめご了承ください。</p>
+           <guide-content v-if="today>nfstart"></guide-content>
+           <kkk-general></kkk-general>           
+        </div><!--wrap閉じ-->
+        <rally-join></rally-join>
+        <fab-confirm></fab-confirm>
+        <gnav-side></gnav-side>
+        <footer-menu></footer-menu>
+       
+          </div><!--all閉じ-->
+          <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+          <script>window.jQuery || document.write('<script src="/js/jquery.min.js"><\/script>');</script><!--JqueryCDNのフォールバック-->
+          <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+          <!--<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>-->
+          <script>window.Vue || document.write('<script src="/js/vue.min.js"><\/script>')</script><!--VueCDNのフォールバック-->
+          <script type="text/javascript" src="../../slick/slick.min.js"></script>
+          <script type="text/javascript" src="/script/jquery.inview.min.js"></script>
+          <script>
+             var title="京大ガイドマップ";
+            var date="全日";
+            var author1="11月祭本部";
+            var type="exhibition";
+            var main="生活・サブカルチャー";
+            var sub="";
+            //Vue.config.devtools = true;
+            var guidespot=[//this is the object which contains the contents of guidemap. For example, image, explanations etc. 
+            //{title:"name of the place",src:["file name of the image","file name of the image"],place:"explanation about the place",nf:"explanation about the place in NF"},
+            //The property "src" can contain more than three contents. For example, src:["hutosyo1.jpg","hutosyo2.jpg","hutosyo3.jpg"]
+            //The property "src" should only contain the name of file, not the path to the file.
+            {title:"クスノキ",src:["kusunoki1.jpg","kusunoki.jpg"],place:"エンブレムにもデザインされ、京大のシンボルとして親しまれているクスノキ。周りがベンチになっており、京大生にとってはお弁当を食べたり、昼寝や読書などができる憩いの場となっています。昼休みや放課後にはダブルダッチやジャグリングなど、様々なサークルの活動場所となっているほか、待ち合わせ場所としてもよく使われます。そんなクスノキですが、実は2代目の木なのです。初代のクスノキは1934年の室戸台風の際に折れ、現在のクスノキはその翌年頃に再び植えられたと推察されています。当時は今よりもずっと小さな、街路樹のようなごく普通の木であり、1969年の大学紛争によって伐り倒されそうになったこともあったとか。しかし80年以上にわたって、このクスノキは私たち京大生を見守り続けながら、ここまで大きく成長してきました。",nf:"11月祭期間中になると、このクスノキの前面に大きな看板が設置され、クスノキ前ステージとして様々な団体がダンスなどのパフォーマンスを行います。11月祭の玄関として華やかな盛り上がりを見せるパフォーマンスの数々を、今年度はオンライン上でご覧いただけます。圧巻のパフォーマンスの数々をぜひお楽しみください！"},
+            {title:"時計台",src:["tokeidai.jpg","tokeidai2.jpg"],place:"百周年時計台記念館は、普段は時計台という略称で親しまれている、京大ではクスノキと並ぶ大きなシンボルです。こちらは1925年に工学部建築学科の初代教授が設計し、完成したのち、2003年に創立百周年記念事業の一環として改修工事が行われ、現在の状態になりました。中には大ホールや歴史展示室があるほか、「ラ・トゥール」というフレンチレストランも入っています。このレストランは価格設定が少し高いので、学生が利用するというよりは、先生方がお偉いさんの接待などに利用していることが多いようです。これらの施設は学生にとっては少々馴染みの薄いものなのですが、時計台の地下には生協ショップやカフェがあるため、地下の方が学生はよく利用しています。また、夜にはライトアップも行われています。京大を訪れる際は昼だけでなく、ぜひ夜の暗い時間帯の時計台も見に来てください。",nf:"11月祭期間中には時計台周辺に様々な企画が出展され、盛り上がりを見せています。"},
+            {title:"附属図書館",src:["futosho.jpg","futosho2.jpg"],place:"京都大学には学部・研究室ごとに約50の図書館・室があり、蔵書数は合計で約702万冊にも及びます。この数は、国立国会図書館、東京大学に次いで、日本で第3位の規模を誇ります。その中でも附属図書館は約100万冊の蔵書を有しており、中には国宝や重要文化財に指定されている資料まで保管されています。このような貴重図書は厳重な管理の下にあり、実物を目にする機会はほとんどありませんが、一部の資料は電子化され京都大学貴重資料デジタルアーカイブとしてインターネット上で一般に公開されています。2020年に話題になった「アマビエ」が描かれた瓦版も京都大学附属図書館が保有しており、アーカイブ上で公開されたものが各種メディアで広く利用されました。附属図書館は自習場所も豊富で、京大生にとっては勉強場所というイメージも強くなっています。一般的な自習スペースのほか、話し合いなど声を出して勉強できる「ラーニング・コモンズ」や、24時間利用可能な「学習室24」など、様々な自習室が併設されており、多くの学生が日夜勉強にいそしんでいます。",nf:"11月祭期間中に開催されているものはありません。"},
+            {title:"法経本館",src:["houkeihonkan1.jpg","houkeihonkan.jpg"],place:"ここでは、主に法学部と経済学部の専門科目が開講されているため、法学部の法と経済学部の経をとって法経本館と呼ばれています。この建物の中にある第四教室は、福山雅治さん主演のドラマ「ガリレオ」の収録が行われたことで知られています。京都大学の法学部は他の学部に比べて試験期間が長いこと、また試験が大変なことで有名です。一方、経済学部は卒業しやすいという噂からパラダイス経済学部、略して「パラ経」と呼ばれています。",nf:"法経本館は、例年の11月祭では様々な企画が開催されています。まずは映画祭典です。法経本館の一つの教室を使って無料で映画の上映を行っています。さらに本部講演という企画も行われており、学外・学内から講師の方を招いて講演をしていただきます。今年度は半導体について研究されている木本先生と、自然地理・アフリカ研究を専門とする水野先生、早川先生による本部講演をオンライン上でご覧いただけます。法経本館ではこのほかにも学生による屋内企画が充実しています。"},
+            {title:"総合研究8号館",src:["8goukan1.jpg","kenki.jpg"],place:"ここでは普段、工学部の専門科目が開講されています。工学部は化学系、機械系、情報系、電気系、建築系、土木系の6学科に分かれており、1学年で合計約1000人の学生が存在します。京大のすべての学部を合わせた1学年の人数は約3000人なので、なんと京大生の約3分の1は工学部生です。男子学生が9割を超えることから、「おと工学部」とも言われています。工学部の生徒は一部のコースを除き、4回生時に桂キャンパスの方へ移動するのですが、桂には工学部の研究施設しかないため「桂強制収容所」と言われています。なお、桂キャンパスは最新の設備が充実しており、おしゃれな建物が多く、夜空もきれいな場所だそうです。",nf:"総合研究８号館では、例年の11月祭においては研究室企画が行われています。京大で研究している方々がそれぞれの研究内容を一般の人にもわかりやすく紹介しており、京大の最先端の研究を見たり、触ったり、体験したりすることができます。京大の学園祭ならではの、大学のアカデミックな一面を見ることができる企画なのです。そんな研究室企画を、今年度はオンライン上で開催しています。ぜひご覧ください。"},
+            {title:"総合人間学部棟",src:["soujintou1.jpg","soujintou.jpg"],place:"ここは主に総合人間学部の科目が開講されている、総合人間学部棟です。ところで、総合人間学部とは一体どんな学部なのか、想像がつくでしょうか？総合人間学部は1992年に京都大学教養部を母体として設立された京大の最も新しい学部です。専門的な学問にとらわれない創造的で幅広い視野を持った人材の育成を目的としています。研究内容は、人間の感情や思考といった「心」のはたらきを「脳」のはたらきを通して解明するという科学的なテーマや日本の学校の校歌に関する研究といった文化的なテーマ、他にも外国語教育、数学、地理学など……本当に人それぞれ多種多様で面白いですね！",nf:"総合人間学部棟では、11月祭期間中には京大生による多種多様な屋内企画が開催されています。今年度はその一部をオンライン上でご覧いただけます。"},
+            {title:"総人広場",src:["soujinhiroba1.jpg","soujinhiroba.jpg"],place:"総合人間学部棟の前にあるこの広場は、普段は総人広場という名前で親しまれていますが、2次試験の時期になると京大名物「折田先生像」が出現することで有名です。「折田先生像」とは元々京大の前身である旧第三高等学校の初代校長折田彦一先生をたたえる像で、いたずらが相次ぎ1992年に撤去されてしまったのですが、いつの頃からか2次試験の時期になると総人広場に折田先生像を名乗るキャラクターをかたどったオブジェが出現するようになりました。",nf:"そんな総人広場は、ハロウィンなど季節のイベントでもよく盛り上がるのですが、11月祭期間中になるとそこかしこに様々な企画が出展されます。路上パフォーマンスやオブジェクトなど、どれも京大生のアイデアが光るユニークな企画ばかりです。これらの企画を今年度はオンラインでお楽しみください。"},
+            {title:"吉田南グラウンド",src:["stage.jpg","fire.jpg"],place:"ここは吉田南グラウンド。吉田キャンパス内に２つ存在するグラウンドのうちのひとつです。普段はスポーツ実習で使用されることもありますが、野球部が練習場として使用していることが多く、４限帯ごろからは野球部が練習している姿がよく見受けられます。その他にも、昼休みなどにスポーツ用品を借りてグラウンドで友人と遊ぶ京大生もいます。",nf:"11月祭期間中には、このグラウンドがおまつり広場として、11月祭の中心地へと変貌します！広いグラウンドに所狭しと並んだ模擬店や、大きなステージの上で繰り広げられるパフォーマンスの数々は、11月祭に欠かせない花形企画です。また、最終日の夕方から夜にかけてはグラウンドの中心で大きなキャンプファイヤーが燃やされ、大盛り上がりのなかで11月祭が締めくくられます。11月祭を語るうえで外せないのが、このおまつり広場なのです。"},
+            {title:"吉田南総合図書館",src:["yoshidaminamilib1.jpg","yoshidaminamilib.jpg"],place:"京大には図書館が数多くあるのですが、そのなかでも吉田南総合図書館は一般教養科目に対応した書籍を数多く取り揃えています。外観から受ける印象よりもその歴史は古く、実は京都大学の祖のひとつである第三高等学校の図書館として1897(明治30)年に設置されて以来、京都大学分校、京都大学教養部、大学院人間・環境学研究科・総合人間学部の図書館として利用され、京都大学の歴史と深くかかわってきています。その一方で、充実した新書・文庫コーナーや、ジブリ映画のDVDを視聴できる視聴覚室をはじめ、現代のニーズにも対応した幅広いジャンルの資料を提供しています。",nf:"11月祭期間中には、図書館正面入口前で京大生による様々なパフォーマンスが行われています。"},
+            {title:"吉田南４号館",src:["4kyo1.jpg","yonkyo.jpg"],place:"ここは吉田南４号館で、通称４共と呼ばれています。2～300人程度が入るような大きな教室がいくつかあり、多くの共通科目がここで開講されています。ところで京大の授業には比較的簡単に及第点をとれる「楽単科目」と呼ばれる授業がありますが、単位を取りやすい分学生も集まりやすく、そのため多くの楽単科目が収容人数の多い教室があるここ４共に自然と集まっているとか……",nf:"４共では11月祭期間中、自主制作演劇企画といって学生たちが主体となって創った演劇企画が催されています。普段、大講義の教室として利用されている一階の教室が本格的な劇場に改造され、毎日、色とりどりの演劇企画が繰り広げられます。京都は「学生演劇の街」と言われており、11月祭は学生演劇の空気の一端に触れる絶好の機会となっています。今年は屋内ステージ企画として、こちらの自主制作演劇企画をオンライン上でお楽しみいただけます！"},
+            ]
+            Vue.component('guide-content',{
+              data:function(){
+                return{
+                    guidespot:guidespot,
+                    place:0,
+                }
+              },
+              template:'<div id="content">'+
+                //From here, you should paste the code generated by image map generator 
+              '<img src="../../image/guide/map.jpg" usemap="#image-map">'+//the property src should contain the relative pass to file of map. you cannot change the property of usemap.
+              '<map name="image-map">'+
+              '<area target="" alt="kusunoki" title="kusunoki" href="" coords="503,776,13" shape="circle" @click.prevent="place=1">'+
+              '<area target="" alt="tokeidai" title="tokeidai" href="" coords="468,622,521,619,525,667,530,667,529,676,582,675,584,706,536,706,538,734,510,736,511,746,488,746,489,738,460,738,459,712,412,713,411,685,465,680,464,670,471,671,470,651,470,651" shape="poly" @click.prevent="place=2">'+
+              '<area target="" alt="futosho" title="futosho" href="" coords="235,577,250,577,248,571,258,570,258,577,332,572,335,608,320,608,321,615,329,615,329,632,337,634,337,669,302,670,304,667,295,667,294,672,263,673,259,626,232,625,232,613,236,614,235,577,235,577,235,577" shape="poly" @click.prevent="place=3">'+
+              '<area target="" alt="houkeihonkan" title="houkeihonkan" href="" coords="388,566,485,560,486,554,496,553,499,558,531,556,536,552,592,548,598,629,593,633,573,634,569,630,565,579,422,586,424,644,396,647,392,642,388,566,485,560,388,566,388,566" shape="poly" @click.prevent="place=4">'+
+              '<area target="" alt="8goukan" title="8goukan" href="" coords="629,554,673,551,673,547,682,547,683,550,707,549,710,623,686,626,684,630,683,623,672,623,671,627,632,630,629,554,673,551,629,554,629,554" shape="poly" @click.prevent="place=5">'+
+              '<area target="" alt="soujintou" title="soujintou" href="" coords="466,940,522,937,527,1008,471,1010" shape="poly" @click.prevent="place=6">'+
+              '<area target="" alt="soujinhiroba" title="soujinhiroba" href="" coords="408,934,459,931,464,1015,412,1020" shape="poly" @click.prevent="place=7">'+
+              '<area target="" alt="ground" title="ground" href="" coords="150,920,326,919,343,936,339,942,339,1007,332,1011,336,1122,331,1130,164,1141,150,1126,151,1081,137,1080,137,937" shape="poly" @click.prevent="place=8">'+
+              '<area target="" alt="yoshidaminamilib" title="yoshidaminamilib" href="" coords="390,1226,487,1220,490,1272,393,1276" shape="poly" @click.prevent="place=9">'+
+              '<area target="" alt="4kyo" title="4kyo" href="" coords="436,1411,475,1409,477,1397,509,1397,510,1463,480,1464,481,1447,432,1450,431,1439,428,1439,428,1428,439,1427" shape="poly" @click.prevent="place=10"></map>'+
+              //Until here, codes are from image map generator
+              //you should not change the following four lines of code
+              '<div class="pop-bg" v-show="place!=0">'+
+              '<guide-pop v-for="(item,index) in guidespot" v-show="index+1==place" :key="item.title" :guide-content="item" @cardclose="place=0"></guide-pop>'+
+              '</div>'+
+               '</div>'
+              })
+              Vue.component('guide-pop',{
+                props:{
+                  guideContent:{
+                      type:Object,
+                      required:true,
+                  }
+                },
+                data:function(){
+                  return{
+                    image:this.guideContent.src,
+                    flag:0,
+                  }
+                },
+                computed:{
+                  items:function(){
+                      for(var i=0;i<this.image.length;i++){
+                        this.image[i]="../../image/guide/"+this.image[i];
+                      }
+                      return this.image;
+                    }
+                },
+                methods:{
+                  close:function(){
+                    this.$emit('cardclose')
+                  }
+                },
+                template:'<div class="pop">'+
+                '<div class="pop-card"><h2 class="cardTitle">{{guideContent.title}}</h2><button class="guide-close" @click="close"><i class="fas fa-times-circle"></i></button>'+
+                '<ul class="guideslick">'+
+                '<li v-for="item in items"><div class="pop-image"><img :src="item"></div></li>'+
+                '</ul>'+
+                '<button @click="flag=0" class="change_tab tab_double" :class="{tab_show:flag==0}">場所紹介</button><button @click="flag=1" class="change_tab tab_double" :class="{tab_show:flag==1}">11月祭中の様子</button>'+
+                //you can chage the text "場所紹介" and "11月祭紹介" above. But do not forget that when you click the first (left) button, explanaton about the place will be shown.
+                '<div class="pop-text"><p v-show="flag==0">{{guideContent.place}}</p><p v-show="flag==1">{{guideContent.nf}}</p></div></div></div>'
+              })
+            </script>
+        <script type="text/javascript" src="../../js/common.js"></script>
+        <script type="text/javascript" src="../../js/click/jquery.rwdImageMaps.js"></script>
+       <script>
+         jQuery( 'img[usemap]' ).rwdImageMaps();//この一行でレスポンシブ対応
+         $('.guideslick').slick({
+           dots:true,
+           arrows:false,
+           autoplay:true,
+           autoplaySpeed:3000,
+
+         });
+       </script>
+       
+         <!--ここからはパン屑用の構造化-->
+         <script type="application/ld+json">
+          {
+           "@context": "http://schema.org",
+           "@type": "BreadcrumbList",
+           "itemListElement":
+           [
+            {
+             "@type": "ListItem",
+             "position": 1,
+             "item":
+             {
+              "@id": "/",
+              "name": "TOP"
+              }
+            },
+            {
+              "@type": "ListItem",
+             "position": 2,
+             "item":
+              {
+                "@id": "/events/honbu/map.html",
+                "name": "京大ガイドマップ"
+              }
+             }
+           ]
+          }
+          </script>
+    </body>
+</html>
+
+
