@@ -41,7 +41,7 @@ $options = array(
     'method'  => 'POST',//推奨はPOSTなので
     'content' => json_encode( $post ),//先ほど作った投稿内容
     'header'=>  "Content-Type: application/json\r\n" .
-                "Authorization: Bearer xoxb-1852589012599-1891261069184-jTNa3a0dYf8198aioMo2XlyT\r\n"//xoxb~yTまでがボットトークン。ここだけ書き換えればとりあえず良いはず
+                "Authorization: Bearer xoxb-hogehoge\r\n"//xoxb~yTまでがボットトークン。ここだけ書き換えればとりあえず良いはず
                 //"Accept: application/json\r\n"//返り値が要らないので消した
     )
 );
